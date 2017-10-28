@@ -3,9 +3,9 @@
  <name>tf_import</name>
  <token/>
  <hidden>false</hidden>
- <version>0.0</version>
+ <version>1.0</version>
  <api-version/>
- <title>Ruby Macro -- UNDER CONSTRUCTION</title>
+ <title>Ruby Macro</title>
  <doc>Imports a Cadence techfile and creates layer properties from it. 
 A command line version of the converter is provided by which this conversion can be performed in batch mode.</doc>
  <doc-url>../..</doc-url>
