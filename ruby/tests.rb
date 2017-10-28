@@ -18,27 +18,33 @@ module TechfileToKLayout
   
     def test_read1
 
-      lv = RBA::LayoutView::new
-      
-      tf_file = File.join(File.dirname(__FILE__), "testdata_1", "techfile.tf")
-      TechfileToKLayout.import_techfile(lv, tf_file)
-      
-      lp = []
-      
-      li = lv.begin_layers
-      while !li.at_end?
-        lp << [
-          li.current.fill_color, 
-          li.current.frame_color, 
-          li.current.dither_pattern,
-          li.current.line_style,
-          li.current.name,
-          li.current.source,
-          li.current.width,
-          li.current.valid?,
-          li.current.xfill?
-        ]
-        li.next
+      begin
+
+        lv = RBA::LayoutView::new
+        
+        tf_file = File.join(File.dirname(__FILE__), "testdata_1", "techfile.tf")
+        TechfileToKLayout.import_techfile(lv, tf_file)
+        
+        lp = []
+        
+        li = lv.begin_layers
+        while !li.at_end?
+          lp << [
+            li.current.fill_color, 
+            li.current.frame_color, 
+            li.current.dither_pattern,
+            li.current.line_style,
+            li.current.name,
+            li.current.source,
+            li.current.width,
+            li.current.valid?,
+            li.current.xfill?
+          ]
+          li.next
+        end
+
+      ensure
+        lv._destroy
       end
 
       ref = [
@@ -74,27 +80,33 @@ module TechfileToKLayout
     
     def test_read2
 
-      lv = RBA::LayoutView::new
-      
-      tf_file = File.join(File.dirname(__FILE__), "testdata_2", "techfile.tf")
-      TechfileToKLayout.import_techfile(lv, tf_file)
-      
-      lp = []
-      
-      li = lv.begin_layers
-      while !li.at_end?
-        lp << [
-          li.current.fill_color, 
-          li.current.frame_color, 
-          li.current.dither_pattern,
-          li.current.line_style,
-          li.current.name,
-          li.current.source,
-          li.current.width,
-          li.current.valid?,
-          li.current.xfill?
-        ]
-        li.next
+      begin
+
+        lv = RBA::LayoutView::new
+        
+        tf_file = File.join(File.dirname(__FILE__), "testdata_2", "techfile.tf")
+        TechfileToKLayout.import_techfile(lv, tf_file)
+        
+        lp = []
+        
+        li = lv.begin_layers
+        while !li.at_end?
+          lp << [
+            li.current.fill_color, 
+            li.current.frame_color, 
+            li.current.dither_pattern,
+            li.current.line_style,
+            li.current.name,
+            li.current.source,
+            li.current.width,
+            li.current.valid?,
+            li.current.xfill?
+          ]
+          li.next
+        end
+
+      ensure
+        lv._destroy
       end
 
       ref = [
