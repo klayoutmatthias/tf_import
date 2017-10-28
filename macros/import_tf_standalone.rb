@@ -33,7 +33,9 @@ module TechfileToKLayout
   
     $lyp_file || raise(Exception("$lyp_file not given"))
   
-    lv = RBA::LayoutView::new
+    mw = RBA::Application::instance
+    mw.create_view
+    lv = mw.current_view
     
     import_techfile(lv, $tf_file)
     lv.save_layer_props($lyp_file)
