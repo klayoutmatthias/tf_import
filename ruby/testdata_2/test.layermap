@@ -1,0 +1,28 @@
+
+# A comment
+
+# layer  purpose  layer  datatype
+# ------------------------------------
+
+  NBL    drawing	2      0
+  PBL    drawing	6      0
+  PW     drawing 	1      0
+  NW     drawing 	12     0
+  PTOP   drawing 	25     0
+  AA     drawing 	54     0
+  VTH    drawing 	91     0
+  P1     drawing 	30     0
+  NHV    drawing 	23     0
+  PHV    drawing 	24     0
+  SP     drawing 	3      0
+  P2     drawing 	31     0
+  NP     drawing 	98     0
+  PP     drawing 	97     0
+  C1     drawing 	9      0
+  M1     drawing 	10     0
+  PA     drawing 	11     1
+  P2     net 	    101
+  P1     net 	    102
+  M1     net 	    113
+  C1     net 	    104
+

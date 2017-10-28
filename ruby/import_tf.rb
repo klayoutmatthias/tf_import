@@ -1,15 +1,10 @@
 #
-# This program is free software; you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or
-# (at your option) any later version.
-#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# LICENSE file for details.
 #
-# DESCRIPTION: Cadence techfile import for KLayout.
+# DESCRIPTION: Cadence techfile import for KLayout - core functionality.
 #
 
 module TechfileToKLayout
@@ -23,6 +18,7 @@ module TechfileToKLayout
       frame_color = 0x808080
       fill_color = 0x808080
       width = 1
+      xfill = false
     end
   
     attr_reader :packet
@@ -31,6 +27,7 @@ module TechfileToKLayout
     attr_accessor :frame_color
     attr_accessor :fill_color
     attr_accessor :width
+    attr_accessor :xfill
   
   end
   
@@ -218,7 +215,7 @@ module TechfileToKLayout
         if sname == "drDefinePacket"
           section.each do |defs|
             if defs.length >= 6
-              packets[defs[1]] ||= [ defs[2], defs[3], defs[4], defs[5] ]
+              packets[defs[1]] ||= [ defs[2], defs[3], defs[4], defs[5], defs[6] ]
             end
           end
         elsif sname == "drDefineLineStyle"
@@ -261,9 +258,10 @@ module TechfileToKLayout
       packets.each do |k,v|
 
         stipple = stipples[v[0]]
-        line_style = line_styles[v[0]]
+        line_style = line_styles[v[1]]
         fill_color = colors[v[2]]
         frame_color = colors[v[3]]
+        xfill = v[4].to_s == "X"
         width = widths[v[1]]
         width ||= 0
 
@@ -273,6 +271,7 @@ module TechfileToKLayout
           dd.line_style = line_style
           dd.fill_color = fill_color
           dd.frame_color = frame_color
+          dd.xfill = xfill
           dd.width = width
         end
 
@@ -380,6 +379,8 @@ module TechfileToKLayout
         lprops.frame_color = ldef.display.frame_color
         lprops.fill_color = ldef.display.fill_color
         lprops.visible = ldef.visible
+        lprops.valid = ldef.valid
+        lprops.xfill = ldef.display.xfill
         lprops.dither_pattern = ldef.display.stipple || 1
         lprops.line_style = ldef.display.line_style || 0
         lv.insert_layer(lv.end_layers, lprops)

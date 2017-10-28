@@ -1,16 +1,11 @@
 # $autorun
 #
-# This program is free software; you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or
-# (at your option) any later version.
-#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# LICENSE file for details.
 #
-# DESCRIPTION: Cadence techfile converter for KLayout.
+# DESCRIPTION: Cadence techfile converter for KLayout - batch mode interface
 #
 # Run the script with
 #   klayout -z -rd tf_file=[input] -rd lyp_file=[output] -r import_tf_standalone.lym ...
