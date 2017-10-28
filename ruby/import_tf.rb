@@ -296,7 +296,6 @@ module TechfileToKLayout
             defs.each { |lp| priorities.push(lp) }
           elsif dname == "techDisplays"
             defs.each do |td|
-              puts td.join("/") # @@@
               if td.length >= 8
                 dd = display_defs[td[2]]
                 if dd
