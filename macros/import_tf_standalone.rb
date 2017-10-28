@@ -33,7 +33,7 @@ module TechfileToKLayout
   
     $lyp_file || raise(Exception("$lyp_file not given"))
   
-    mw = RBA::Application::instance
+    mw = RBA::Application::instance.main_window
     mw.create_view
     lv = mw.current_view
     
