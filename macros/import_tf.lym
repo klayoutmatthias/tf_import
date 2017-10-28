@@ -33,10 +33,6 @@
 # a .layermap file if there is one beside the [input] file.
 # It will prompt for a .drf file if it does not find a unique file. 
 
-# TODO: should come from "ruby"
-inst_path = File.dirname(__FILE__)
-$:.contains?(inst_path) || $: &lt;&lt; inst_path
-
 require "import_tf"
 
 module TechfileToKLayout

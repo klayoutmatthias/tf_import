@@ -24,10 +24,6 @@
 # Ruby expression. Hence, no Skill code inside the techfile is evaluated.
 # 
 
-# TODO: should come from "ruby"
-inst_path = File.dirname(__FILE__)
-$:.contains?(inst_path) || $: << inst_path
-
 require "import_tf"
 
 module TechfileToKLayout
