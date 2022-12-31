@@ -10,7 +10,7 @@
 A command line version of the converter is provided by which this conversion can be performed in batch mode.</doc>
  <doc-url>../..</doc-url>
  <url/>
- <license>MIT</license>
+ <license>GPL V3</license>
  <author>Matthias Köfferlein</author>
  <author-contact>matthias@klayout.de</author-contact>
  <authored-time/>
