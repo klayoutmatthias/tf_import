@@ -7,6 +7,8 @@
 # DESCRIPTION: Cadence techfile import for KLayout - core functionality.
 #
 
+require "stringio"
+
 module TechfileToKLayout
 
   class TechfileDisplayDefinitions
