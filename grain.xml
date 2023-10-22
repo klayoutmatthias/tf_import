@@ -8,7 +8,7 @@
  <title>Ruby Macro</title>
  <doc>Imports a Cadence techfile and creates layer properties from it. 
 A command line version of the converter is provided by which this conversion can be performed in batch mode.</doc>
- <doc-url>../..</doc-url>
+ <doc-url>https://github.com/klayoutmatthias/tf_import</doc-url>
  <url/>
  <license>GPL V3</license>
  <author>Matthias Köfferlein</author>
